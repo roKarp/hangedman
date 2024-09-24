@@ -1,5 +1,8 @@
 import { useState } from "react"
 import list from "./words.json"
+import {HangmanDrawing} from "./components/HangmanDrawing.tsx"
+import {HangmanWord} from "./components/HangmanWord.tsx"
+import {Keyboard} from "./components/Keyboard.tsx"
 function App() {
   const [Guess, Set] = useState(() => {
     return list[Math.floor(Math.random() * list.length)]
@@ -19,6 +22,9 @@ function App() {
   }}
   >
     <div style={{ fontSize: "2rem", textAlign: "center"}}>Lose Win</div>
+    <HangmanDrawing />
+    <HangmanWord  />
+    <Keyboard />
   </div>
 )
 }
