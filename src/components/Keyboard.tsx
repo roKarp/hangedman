@@ -1,3 +1,4 @@
+import st from "../style/Keyb.module.css"
 const alph = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
     'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
@@ -13,7 +14,9 @@ export function Keyboard() {
         }}>
             {alph.map(key => {
                 return (
-                    <button key={key} >{key}</button>
+                    <button className={`${st.bt}`} key={key}>
+                        {key}
+                    </button>
                 )
             })}
         </div>
