@@ -1,9 +1,9 @@
 type HangmanDrawingProps = {
-    gLetters: string[]
+    guessedLetters: string[]
     Guess: string
 }
 
-export function HangmanWord({gLetters, Guess}: HangmanDrawingProps) {
+export function HangmanWord({guessedLetters, Guess}: HangmanDrawingProps) {
     return (
         <div 
             style={{ 
@@ -18,7 +18,7 @@ export function HangmanWord({gLetters, Guess}: HangmanDrawingProps) {
             {Guess.split("").map((letter, index) => (
             <span style={{ borderBottom: ".1em solid black"}} key={index}>
                 <span style={{
-                    visibility: gLetters.includes(letter) 
+                    visibility: guessedLetters.includes(letter) 
                     ? "visible"
                     : "hidden",
                 }}

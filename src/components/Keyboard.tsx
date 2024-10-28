@@ -1,10 +1,21 @@
 import st from "../style/Keyb.module.css"
 const alph = [
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
-    'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-    'U', 'V', 'W', 'X', 'Y', 'Z'
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+    'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+    'u', 'v', 'w', 'x', 'y', 'z'
 ];
-export function Keyboard() {
+
+type KeyboardProps = {
+    activeLetters: string[]
+    inactive: string[]
+    addGuessedLetters: (letter: string) => void
+}
+
+export function Keyboard({
+    activeLetters, 
+    inactive, 
+    addGuessedLetters,
+}: KeyboardProps) {
     return (
         <div 
             style={{ 
@@ -13,8 +24,15 @@ export function Keyboard() {
             gap:'.5rem',
         }}>
             {alph.map(key => {
+                const isActive = activeLetters.includes(key)
+                const isInactive = inactive.includes(key)
                 return (
-                    <button className={`${st.bt}`} key={key}>
+                    <button 
+                    onClick={() => addGuessedLetters(key)} 
+                    className={`${st.bt} ${isInactive ? st.inactive: ""} ${isActive ? st.active: ""}`} 
+                    disabled={isInactive || isActive}
+                    key={key}
+                    >
                         {key}
                     </button>
                 )

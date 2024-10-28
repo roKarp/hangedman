@@ -5,20 +5,22 @@
     aspect-ratio: 1 /1 ;
     font-size: 2.5rem;
     padding: .5rem;
+    text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
     color: black;
 }
 
-.bt:active {
+.bt.active {
     background-color: hsl(200, 100%, 50%);
     color: white;
 }
-.bt:inactive {
+
+.bt.inactive {
     opacity: .3;
 }
 
-.bt:hover:not(:disabled)
+.bt:hover:not(:disabled),
 .bt:focus:not(:disabled) {
     background-color: hsl(200, 100%, 75%);
 }
