@@ -3,7 +3,5 @@
 ## Outline
 The main goal is to create a simple hangedman game with React and Typescript.
 ### Done currently 
-Hanging UI, word logic and basic functionality
+Hanging UI, word logic, basic functionality, keyboard logic, game logic and replay function
 
-### To do
-Create the keyboard, add interaction for the player and a replay functionality

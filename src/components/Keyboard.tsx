@@ -7,12 +7,14 @@ const alph = [
 
 type KeyboardProps = {
     activeLetters: string[]
+    disabled?: boolean
     inactive: string[]
     addGuessedLetters: (letter: string) => void
 }
 
 export function Keyboard({
-    activeLetters, 
+    activeLetters,
+    disabled = false, 
     inactive, 
     addGuessedLetters,
 }: KeyboardProps) {
@@ -30,7 +32,7 @@ export function Keyboard({
                     <button 
                     onClick={() => addGuessedLetters(key)} 
                     className={`${st.bt} ${isInactive ? st.inactive: ""} ${isActive ? st.active: ""}`} 
-                    disabled={isInactive || isActive}
+                    disabled={isInactive || isActive || disabled}
                     key={key}
                     >
                         {key}
