@@ -1,7 +1,7 @@
-# Hangedman with React
+# Hanged man with React
 ![](https://atlus.com/persona5/img/characters/arcana_munehisa.png)
 ## Outline
-The main goal is to create a simple hangedman game with React and Typescript.
+The main goal is to create a simple hanged man game with React and Typescript.
 
 ## Guide
 
